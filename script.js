@@ -31,4 +31,22 @@ function handleBorder(){
 }
 
 
+window.addEventListener("load", getLocal);
+
+function getLocal(){
+    let newBorder=localStorage.getItem("borderJson");
+    let newOpacity=localStorage.getItem("opacityJson");
+
+    if(newBorder!==null){
+        border.value=JSON.parse(newBorder);
+        handleBorder();
+    }
+
+    if(newOpacity!==null){
+        opacity.value=localStorage.getItem(newOpacity);
+        handleOpacity();
+    }
+
+}
+
 
